@@ -32,6 +32,7 @@ jobs:
         run: mvn clean install
 
   push_to_registry:
+    needs: build
 
     runs-on: ubuntu-latest
 
@@ -45,7 +46,7 @@ jobs:
           image: mrunknown6/github_actions_example
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfil
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
