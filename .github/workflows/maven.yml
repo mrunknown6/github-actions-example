@@ -51,6 +51,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: build-artifact
+          path: target/github_actions_example.jar
 
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
